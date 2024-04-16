@@ -117,5 +117,9 @@ class CashinapprovalPage(BasePage):
         self.action_click(close)
     def valid_cashin_approval_loop(self):
         while True:
-            self.valid_approve_deposit()
+            try:
+                self.valid_approve_deposit()
+            except Exception as e:
+                print(e)
+                break
 
